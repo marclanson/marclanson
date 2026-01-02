@@ -1,7 +1,7 @@
 {
-  "name": "ben-tossell-website",
+  "name": "marc-lanson-website",
   "version": "1.0.0",
-  "description": "Ben Tossell's personal website with blog functionality",
+  "description": "Marc Lanson's personal website",
   "main": "index.html",
   "scripts": {
     "new-post": "node create-post.js",
@@ -13,7 +13,7 @@
     "markdown",
     "static-site"
   ],
-  "author": "Ben Tossell",
+  "author": "Marc Lanson",
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {}

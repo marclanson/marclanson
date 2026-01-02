@@ -26,11 +26,7 @@
         
         <main class="blog-main">
             <h1 class="blog-title">blog</h1>
-            <p class="blog-subtitle">Thoughts on building, investing, and the tools that shape our digital world.</p>
-            
-            <div class="posts-list" id="posts-list">
-                <div class="loading">loading posts...</div>
-            </div>
+            <p class="blog-subtitle">No posts yet.</p>
         </main>
         
         <footer class="blog-footer">
@@ -39,49 +35,6 @@
         </footer>
     </div>
 
-    <script>
-    (function() {
-        const posts = [
-            {
-                title: "How I code with agents, without being 'technical'",
-                slug: "how-i-code",
-                date: "2025-12-31",
-                excerpt: "I've spent 3 billion tokens in four months. Every single one through a terminal, watching an agent write code I couldn't write myself.",
-                file: "2025-12-31-how-i-code.md"
-            }
-        ];
-
-        function formatDate(dateStr) {
-            const date = new Date(dateStr + 'T00:00:00');
-            return date.toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'short', 
-                day: 'numeric' 
-            });
-        }
-
-        function renderPosts() {
-            const container = document.getElementById('posts-list');
-            if (posts.length === 0) {
-                container.innerHTML = '<p class="no-posts">No posts yet.</p>';
-                return;
-            }
-
-            const html = posts.map(post => `
-                <article class="post-card">
-                    <a href="post.html?slug=${post.slug}" class="post-link">
-                        <time class="post-date">${formatDate(post.date)}</time>
-                        <h2 class="post-title">${post.title}</h2>
-                        <p class="post-excerpt">${post.excerpt}</p>
-                    </a>
-                </article>
-            `).join('');
-
-            container.innerHTML = html;
-        }
-
-        renderPosts();
-    })();
-    </script>
+    
 </body>
 </html>

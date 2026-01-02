@@ -9,30 +9,30 @@ const state = {
 // Fun vibes that rotate (changes every 8 seconds + on each command)
 const vibes = [
   "building things",
-  "shipping fast",
+  "finding the better way",
   "caffeinated ☕",
   "in the zone",
   "thinking...",
   "exploring ideas",
-  "creating chaos",
-  "vibing",
-  "debugging life",
+  "data driven",
+  "connecting data",
+  "debugging work",
   "ctrl+c ctrl+v",
-  "tabs not spaces",
-  "git push -f",
-  "rm -rf doubts",
-  "npm install coffee",
-  "making things",
+  "reducing 4-eye checks",
+  "6-eye checks are worse!",
+  "preventative controls",
+  "sprinkling ai",
+  "detecting anomalies",
   "iterating",
-  "learning in public",
-  "writing code",
-  "breaking things",
+  "foundations in data",
+  "test everything",
+  "enhancing...",
   "fixing things",
-  "one more feature...",
+  "agent supervision",
   "refactoring",
   "deep work",
-  "inbox zero (jk)",
-  "async mode",
+  "sending fewer emails",
+  "under control",
 ];
 
 // Available themes
@@ -48,7 +48,7 @@ const commands = {
         '  <span class="bold white">Available Commands</span>',
         "",
         '  <span class="muted">--- about ---</span>',
-        '  <span class="cmd">whoami</span>        who is ben tossell',
+        '  <span class="cmd">whoami</span>        who is marc lanson',
         '  <span class="cmd">tldr</span>          ultra-short bio',
         '  <span class="cmd">now</span>           what im doing',
         '  <span class="cmd">prev</span>          previous work',
@@ -81,20 +81,17 @@ const commands = {
     },
   },
   whoami: {
-    desc: "who is ben tossell",
+    desc: "who is marc lanson",
     fn: () => {
       return `
-  <span class="bold white">Ben Tossell</span> <span class="muted">[2025]</span>
+  <span class="bold white">Marc Lanson</span> <span class="muted">[2026]</span>
   ┌────────────────────────────────────────────────┐
-  │  head of devrel      <a href="https://factory.ai" target="_blank" rel="noopener">Factory</a>                   │
-  │  investor & writer   <a href="https://bensbites.com" target="_blank" rel="noopener">Ben's Bites</a>               │
-  │  twin dad                                      │
+  │  builder & developer                          │
+  │  based in ...                                 │
+  │  ...                                          │
   └────────────────────────────────────────────────┘
 
-  i'm technically not technical, but technical enough to not be
-  truly non-technical.
-
-  technical, non-technical member of staff.
+  short bio about you here.
 
   type <span class="cmd">now</span> to see what i'm currently up to.
 `;
@@ -224,9 +221,6 @@ const commands = {
 
   • <a href="https://factory.ai" target="_blank" rel="noopener">Factory</a> <span class="accent">[droid]</span>
   • <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
-  • <a href="https://linear.app" target="_blank" rel="noopener">Linear</a>
-  • <a href="https://granola.ai" target="_blank" rel="noopener">Granola</a>
-  • <a href="https://ghostty.org" target="_blank" rel="noopener">Ghostty</a>
 `;
     },
   },
@@ -333,7 +327,7 @@ const commands = {
   neofetch: {
     desc: "system info",
     fn: () => `
-  <span class="accent">       _</span>          ben@tossell
+  <span class="accent">       _</span>          marc@lanson
   <span class="accent">      (_)</span>         -----------
   <span class="accent">   ___ _  ___</span>     OS: Human 1.0
   <span class="accent">  / __| |/ _ \\</span>    Host: Earth
@@ -354,7 +348,7 @@ const commands = {
   lp: {
     desc: "interested in the fund",
     fn: () => {
-      window.open('mailto:ben.tossell@gmail.com?subject=Interested%20in%20the%20fund');
+      window.open('mailto:you@example.com?subject=Interested%20in%20the%20fund');
       return '\n  <span class="success">opening email client...</span>\n';
     },
   },
@@ -371,7 +365,7 @@ const commands = {
   <span class="muted">email format:</span> [stage], [tagline]
   <span class="muted">example:</span> "Pre-seed, GitHub Copilot for databases"
 
-  <a href="mailto:ben.tossell@gmail.com?subject=%5Bstage%5D%2C%20%5Btagline%5D" target="_blank" rel="noopener">→ click here to send pitch</a>
+  <a href="mailto:you@example.com?subject=%5Bstage%5D%2C%20%5Btagline%5D" target="_blank" rel="noopener">→ click here to send pitch</a>
 
   <span class="muted">or type</span> <span class="cmd">pitch send</span> <span class="muted">to open email</span>
 `;
@@ -400,8 +394,8 @@ const commands = {
       }
       const what = args[0].toLowerCase();
       if (what === 'email') {
-        await navigator.clipboard.writeText('ben.tossell@gmail.com');
-        return '\n  <span class="success">copied ben.tossell@gmail.com to clipboard</span>\n';
+        await navigator.clipboard.writeText('you@example.com');
+        return '\n  <span class="success">copied you@example.com to clipboard</span>\n';
       }
       if (what === 'twitter' || what === 'x') {
         await navigator.clipboard.writeText('@marclanson');
@@ -462,8 +456,8 @@ const commands = {
     desc: "ultra-short bio",
     fn: () => {
       return `
-  <span class="bold white">ben tossell</span> — head of devrel @ factory. investor in dev tools.
-  prev: founded makerpad (acq. zapier), sequoia/a16z scout.
+  <span class="bold white">marc lanson</span> — short tagline about you.
+  prev: add a brief previous work/experience line.
 `;
     },
   },
@@ -1376,12 +1370,12 @@ function cycleTheme() {
 function updateUKTime() {
   const timeEl = document.getElementById("status-time");
   if (timeEl) {
-    const ukTime = new Date().toLocaleTimeString("en-GB", {
-      timeZone: "Europe/London",
+    const sydTime = new Date().toLocaleTimeString("en-AU", {
+      timeZone: "Australia/Sydney",
       hour: "2-digit",
       minute: "2-digit",
     });
-    timeEl.textContent = ukTime + " UK";
+    timeEl.textContent = sydTime + " SYD";
   }
 }
 
@@ -1453,7 +1447,7 @@ async function boot() {
   const lines = [
     "initializing terminal...",
     "loading modules... done",
-    "connecting to ben.tossell... connected",
+    "connecting to marc.lanson... connected",
   ];
 
   for (const line of lines) {
@@ -1472,18 +1466,23 @@ async function boot() {
   }
   output.innerHTML += '\n';
 
-  output.innerHTML += `<span class="accent ascii-art">  ██████╗ ███████╗███╗   ██╗  ████████╗ ██████╗ ███████╗███████╗███████╗██╗     ██╗
-  ██╔══██╗██╔════╝████╗  ██║  ╚══██╔══╝██╔═══██╗██╔════╝██╔════╝██╔════╝██║     ██║
-  ██████╔╝█████╗  ██╔██╗ ██║     ██║   ██║   ██║███████╗███████╗█████╗  ██║     ██║
-  ██╔══██╗██╔══╝  ██║╚██╗██║     ██║   ██║   ██║╚════██║╚════██║██╔══╝  ██║     ██║
-  ██████╔╝███████╗██║ ╚████║     ██║   ╚██████╔╝███████║███████║███████╗███████╗███████╗
-  ╚═════╝ ╚══════╝╚═╝  ╚═══╝     ╚═╝    ╚═════╝ ╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝</span>
-`;
+  output.innerHTML += '<span class="accent ascii-art">███╗   ███╗  █████╗  ██████╗   ██████╗ \n' +
+    '████╗ ████║ ██╔══██╗ ██╔══██╗ ██╔════╝ \n' +
+    '██╔████╔██║ ███████║ ██████╔╝ ██║      \n' +
+    '██║╚██╔╝██║ ██╔══██║ ██╔══██║ ██║      \n' +
+    '██║ ╚═╝ ██║ ██║  ██║ ██║  ██║ ╚██████╗ \n' +
+    '╚═╝     ╚═╝ ╚═╝  ╚═╝ ╚═╝  ╚═╝  ╚═════╝ \n\n' +
+    '██╗      █████╗  ███╗   ██╗ ███████╗  ██████╗  ███╗   ██╗\n' +
+    '██║     ██╔══██╗ ████╗  ██║ ██╔════╝ ██╔═══██╗ ████╗  ██║\n' +
+    '██║     ███████║ ██╔██╗ ██║ ███████╗ ██║   ██║ ██╔██╗ ██║\n' +
+    '██║     ██╔══██║ ██║╚██╗██║ ╚════██║ ██║   ██║ ██║╚██╗██║\n' +
+    '███████╗██║  ██║ ██║ ╚████║ ███████║ ╚██████╔╝ ██║ ╚████║\n' +
+    '╚══════╝╚═╝  ╚═╝ ╚═╝  ╚═══╝ ╚══════╝  ╚═════╝  ╚═╝  ╚═══╝</span>\n';
   await sleep(100);
 
   output.innerHTML += `
-  builder. investor. dad.
-  welcome to my cli. type <span class="cmd">help</span> to see commands.
+  financial operations. automation. ai.
+  welcome to my website interface. type <span class="cmd">help</span> to see commands.
 
 `;
   scrollToBottom();

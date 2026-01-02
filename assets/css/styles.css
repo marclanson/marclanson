@@ -384,7 +384,6 @@ a:hover {
     line-height: 1.1;
     letter-spacing: -0.5px;
     white-space: pre;
-    overflow-x: auto;
     display: block;
 }
 
