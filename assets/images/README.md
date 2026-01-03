@@ -1,6 +1,6 @@
 # Images Directory
 
-This directory contains all the image assets for Ben Tossell's personal website.
+This directory contains all the image assets for Marc Lanson's personal website.
 
 ## Required Files
 

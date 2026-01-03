@@ -97,7 +97,7 @@ Each blog post includes metadata at the top:
 ---
 title: "Your Post Title"
 date: "2024-05-23"
-author: "Ben Tossell"
+author: "Marc Lanson"
 tags: ["tag1", "tag2", "tag3"]
 excerpt: "A brief description of your post"
 ---

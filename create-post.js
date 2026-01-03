@@ -36,7 +36,7 @@ function createBlogPost(title, tags = [], excerpt = '') {
   const frontmatter = `---
 title: "${title}"
 date: "${dateStr}"
-author: "Ben Tossell"
+author: "Marc Lanson"
 tags: [${tags.map(tag => `"${tag.trim()}"`).join(', ')}]
 excerpt: "${excerpt}"
 ---
