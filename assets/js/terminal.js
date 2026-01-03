@@ -320,10 +320,8 @@ const commands = {
       return `
   <span class="bold white">projects:</span>
 
-  • <a href="https://archive.is/Ze3Ka" target="_blank" rel="noopener">makerpad</a> <span class="muted">['19-'21]</span> <span class="success">[acquired by zapier]</span>
-  • <a href="https://marcsbites.com" target="_blank" rel="noopener">marc's bites</a> <span class="muted">['22-present]</span>
   • <a href="https://github.com/marclanson/marclanson" target="_blank" rel="noopener">this website</a> <span class="muted">tui-style personal site</span> <span class="accent">[open source]</span>
-  • <a href="https://github.com/factory-marc/feed" target="_blank" rel="noopener">feed</a> <span class="muted">linear-style social tracker</span> <span class="accent">[open source]</span>
+
 `;
     },
   },
