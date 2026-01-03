@@ -1,6 +1,6 @@
 /* 
  * CLI Terminal Styles
- * Ben Tossell's personal website
+ * Marc Lanson's personal website
  * Based on Factory Design System
  */
 
@@ -80,60 +80,6 @@
     --title-btn-close: #ff3333;
     --title-btn-min: #ffff33;
     --title-btn-max: #33ff33;
-}
-
-/* ===== THEME: AMBER (Warm Retro) ===== */
-.theme-amber {
-    --bg-primary: #1a1200;
-    --bg-secondary: #1f1600;
-    --bg-tertiary: #261c00;
-    --bg-hover: #332600;
-    
-    --text-primary: #ffb000;
-    --text-secondary: #cc8c00;
-    --text-muted: #805800;
-    
-    --accent: #ff8c00;
-    --accent-hover: #ffaa33;
-    
-    --border: #403000;
-    --border-strong: #4d3a00;
-    
-    --success: #88cc00;
-    --error: #ff4400;
-    --warning: #ffcc00;
-    --link: #ffdd66;
-    
-    --title-btn-close: #ff4400;
-    --title-btn-min: #ffcc00;
-    --title-btn-max: #88cc00;
-}
-
-/* ===== THEME: MATRIX ===== */
-.theme-matrix {
-    --bg-primary: #0d0d0d;
-    --bg-secondary: #0a0f0a;
-    --bg-tertiary: #0f140f;
-    --bg-hover: #141f14;
-    
-    --text-primary: #00ff41;
-    --text-secondary: #00cc33;
-    --text-muted: #008f11;
-    
-    --accent: #00ff41;
-    --accent-hover: #33ff66;
-    
-    --border: #003300;
-    --border-strong: #004400;
-    
-    --success: #00ff41;
-    --error: #ff0040;
-    --warning: #ffff00;
-    --link: #00ffff;
-    
-    --title-btn-close: #ff0040;
-    --title-btn-min: #ffff00;
-    --title-btn-max: #00ff41;
 }
 
 /* ===== THEME: HIGH CONTRAST ===== */

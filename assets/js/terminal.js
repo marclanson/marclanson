@@ -35,7 +35,7 @@ const vibes = [
 ];
 
 // Available themes
-const themes = ["midnight", "phosphor", "amber", "matrix", "contrast"];
+const themes = ["midnight", "phosphor", "contrast"];
 
 // Commands registry
 const commands = {
