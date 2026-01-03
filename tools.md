@@ -1,11 +1,7 @@
 ### tools i use
-- superhuman
 - github
 - chatgpt
-- codex
 - factory
 - slack
-- granola
-- whispr flow
 - cursor
 - replit
