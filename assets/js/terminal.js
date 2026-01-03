@@ -9,7 +9,7 @@ const state = {
 // Fun vibes that rotate (changes every 8 seconds + on each command)
 const vibes = [
   "building things",
-  "finding the better way",
+  "searching for a better way",
   "caffeinated ☕",
   "in the zone",
   "thinking...",
@@ -19,7 +19,6 @@ const vibes = [
   "debugging work",
   "ctrl+c ctrl+v",
   "reducing 4-eye checks",
-  "6-eye checks are worse!",
   "preventative controls",
   "sprinkling ai",
   "detecting anomalies",
@@ -50,12 +49,10 @@ const commands = {
         '  <span class="muted">--- about ---</span>',
         '  <span class="cmd">whoami</span>        who is marc lanson',
         '  <span class="cmd">tldr</span>          ultra-short bio',
-        '  <span class="cmd">now</span>           what im doing',
         '  <span class="cmd">prev</span>          previous work',
         '  <span class="cmd">projects</span>      notable projects',
         "",
         '  <span class="muted">--- content ---</span>',
-        '  <span class="cmd">investments</span>   my investments',
         '  <span class="cmd">tools</span>         tools i use daily',
         '  <span class="cmd">models</span>        ai models i use',
         '  <span class="cmd">blog</span>          read the blog',
@@ -84,35 +81,26 @@ const commands = {
     desc: "who is marc lanson",
     fn: () => {
       return `
-  <span class="bold white">Marc Lanson</span> <span class="muted">[2026]</span>
-  ┌────────────────────────────────────────────────┐
-  │  builder & developer                          │
-  │  based in ...                                 │
-  │  ...                                          │
-  └────────────────────────────────────────────────┘
+  <span class="bold white">marc lanson  director of operations</span>
 
-  short bio about you here.
+  <span class="bold white">experience:</span>
+  macquarie bank, nomura, barclays, socgen, goldman sachs
 
-  type <span class="cmd">now</span> to see what i'm currently up to.
+  <span class="bold white">expertise:</span>
+  automation, regulatory compliance, financial management,
+  operational risk, project management, process improvement,
+  product ownership, data analytics, technology innovation,
+  vendor oversight, executive leadership, governance
+
+  <span class="bold white">products:</span>
+  listed derivatives, otc clearing, fx, prime brokerage,
+  private wealth, asset management, stock loan and borrow
 `;
     },
   },
   about: {
     desc: "alias for whoami",
     fn: () => commands.whoami.fn(),
-  },
-  now: {
-    desc: "current activities",
-    fn: () => {
-      return `
-  <span class="bold white">now:</span>
-
-  • about to have baby number 3
-  • shipping on github <a href="https://github.com/marclanson" target="_blank" rel="noopener">/marclanson</a> & <a href="https://github.com/factory-ben" target="_blank" rel="noopener">/factory-ben</a>
-  • investing $100k into devtools & infra
-  • writing <a href="https://bensbites.com" target="_blank" rel="noopener">ben's bites</a> newsletter
-`;
-    },
   },
   prev: {
     desc: "previous work",
@@ -177,40 +165,6 @@ const commands = {
         document.getElementById("output").innerHTML = "";
       }, 10);
       return "";
-    },
-  },
-  investments: {
-    desc: "investment portfolio",
-    fn: () => {
-      return `
-  <span class="bold white">Investments</span>
-
-  <span class="bold white">Fund Performance</span>
-  ┌──────────────────────┬──────────┬─────────┐
-  │ Fund                 │ MOIC     │ IRR     │
-  ├──────────────────────┼──────────┼─────────┤
-  │ Fund I ['20/'21]     │ 4x       │ 39%     │
-  │ Fund II ['23/'25]    │ 2x       │ 36%     │
-  ├──────────────────────┼──────────┼─────────┤
-  │ Fund III             │ <span class="muted">first close complete - open to new LPs</span>
-  └──────────────────────┴──────────┴─────────┘
-
-  <span class="bold white">Notable Companies</span>
-
-  • <a href="https://supabase.com" target="_blank" rel="noopener">supabase</a> <span class="muted">[seed]</span> → <span class="success">$5BN</span>
-  • <a href="https://gamma.app" target="_blank" rel="noopener">gamma</a> <span class="muted">[seed+ - a16z scout]</span> → <span class="success">$2.3BN</span> <span class="muted">[a16z led]</span>
-  • <a href="https://etched.com" target="_blank" rel="noopener">etched</a> <span class="muted">[seed+]</span> → <span class="success">$2.5BN</span>
-  • <a href="https://scribe.how" target="_blank" rel="noopener">scribe</a> <span class="muted">[seed]</span> → <span class="success">$1.3BN</span>
-  • <a href="https://factory.ai" target="_blank" rel="noopener">factory</a> <span class="muted">[seed]</span>
-  • <a href="https://sfcompute.com" target="_blank" rel="noopener">sf compute</a> <span class="muted">[pre-seed]</span>
-  • <a href="https://flutterflow.io" target="_blank" rel="noopener">flutterflow</a> <span class="muted">[seed]</span>
-  • <a href="https://wordware.ai" target="_blank" rel="noopener">wordware</a> <span class="muted">[pre-seed]</span>
-  • <a href="https://pika.art" target="_blank" rel="noopener">pika</a> <span class="muted">[series A]</span>
-  • <a href="https://crewai.com" target="_blank" rel="noopener">crewai</a> <span class="muted">[seed]</span>
-  • <a href="https://julius.ai" target="_blank" rel="noopener">julius</a> <span class="muted">[pre-seed]</span>
-
-  <span class="muted">interested? type</span> <span class="cmd">lp</span> <span class="muted">or</span> <span class="cmd">pitch</span>
-`;
     },
   },
   tools: {
@@ -287,7 +241,7 @@ const commands = {
   ls: {
     desc: "list files",
     fn: () =>
-      '\n  README.md  investments.md  tools.md\n\n  <span class="muted">try: whoami, now, investments, tools</span>\n',
+      '\n  README.md  tools.md\n\n  <span class="muted">try: whoami, tools</span>\n',
   },
   cat: {
     desc: "cat file",
@@ -300,7 +254,7 @@ const commands = {
         return commands.whoami.fn();
       }
       if (file.includes("investment")) {
-        return commands.investments.fn();
+        return '\n  <span class="error">no investments page configured</span>\n';
       }
       if (file.includes("tool")) {
         return commands.tools.fn();
@@ -433,17 +387,15 @@ const commands = {
       const term = args.join(' ').toLowerCase();
       const searchable = [
         { cmd: 'whoami', keywords: ['ben', 'tossell', 'factory', 'devrel', 'investor', 'twin', 'dad', 'technical'] },
-        { cmd: 'investments', keywords: ['supabase', 'gamma', 'etched', 'scribe', 'factory', 'sf compute', 'flutterflow', 'wordware', 'pika', 'crewai', 'julius', 'invest', 'portfolio'] },
         { cmd: 'tools', keywords: ['factory', 'github', 'linear', 'granola', 'ghostty', 'droid'] },
         { cmd: 'projects', keywords: ['makerpad', 'zapier', 'bens bites', 'bensbites', 'feed', 'website', 'open source'] },
-        { cmd: 'now', keywords: ['baby', 'shipping', 'github', 'devtools', 'infra', 'newsletter'] },
         { cmd: 'prev', keywords: ['makerpad', 'sequoia', 'a16z', 'scout', 'product hunt'] },
         { cmd: 'models', keywords: ['opus', 'sonnet', 'gpt', 'codex', 'claude', 'ai', 'model'] },
         { cmd: 'contact', keywords: ['twitter', 'linkedin', 'github', 'discord', 'email', 'social'] },
       ];
       const matches = searchable.filter(s => s.keywords.some(k => k.includes(term) || term.includes(k)));
       if (matches.length === 0) {
-        return `\n  <span class="muted">no results for "${term}"</span>\n  try: investments, tools, projects, contact\n`;
+        return `\n  <span class="muted">no results for "${term}"</span>\n  try: tools, projects, contact\n`;
       }
       let output = `\n  <span class="bold white">results for "${term}":</span>\n\n`;
       matches.forEach(m => {
