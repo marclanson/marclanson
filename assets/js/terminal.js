@@ -59,7 +59,6 @@ const commands = {
         '  <span class="muted">--- contact ---</span>',
         '  <span class="cmd">contact</span>       find me online',
         '  <span class="cmd">tweet</span>         tweet at me',
-        '  <span class="cmd">copy twitter</span>  copy handle to clipboard',
         "",
         '  <span class="muted">--- terminal ---</span>',
         '  <span class="cmd">theme</span>         list/change themes',
@@ -75,7 +74,8 @@ const commands = {
     desc: "who is marc lanson",
     fn: () => {
       return `
-  <span class="bold white">marc lanson  financial services operations specialist</span>
+  <span class="bold white">marc lanson</span>
+  <span class="bold white">financial services operations specialist</span>
   technically non-technical, but loves to code and build.
 
   <span class="bold white">experience:</span>
@@ -269,21 +269,10 @@ const commands = {
     },
   },
   copy: {
-    desc: "copy email or twitter handle",
+    desc: "copy email",
     fn: async (args) => {
-      if (!args || args.length === 0) {
-        return '\n  usage: <span class="cmd">copy email</span> or <span class="cmd">copy twitter</span>\n';
-      }
-      const what = args[0].toLowerCase();
-      if (what === 'email') {
-        await navigator.clipboard.writeText('you@example.com');
-        return '\n  <span class="success">copied you@example.com to clipboard</span>\n';
-      }
-      if (what === 'twitter' || what === 'x') {
-        await navigator.clipboard.writeText('@marclanson');
-        return '\n  <span class="success">copied @marclanson to clipboard</span>\n';
-      }
-      return '\n  <span class="error">unknown option: ' + what + '</span>\n  try: <span class="cmd">copy email</span> or <span class="cmd">copy twitter</span>\n';
+      await navigator.clipboard.writeText('marc.lanson@gmail.com');
+      return '\n  <span class="success">copied marc.lanson@gmail.com to clipboard</span>\n';
     },
   },
   projects: {
@@ -306,12 +295,13 @@ const commands = {
       const term = args.join(' ').toLowerCase();
       const searchable = [
         { cmd: 'whoami', keywords: ['marc', 'lanson', 'non-technical'] },
-        { cmd: 'tools', keywords: ['factory', 'github', 'droid'] },
+        { cmd: 'tools', keywords: ['factory', 'github', 'droid', 'cursor'] },
         { cmd: 'contact', keywords: ['twitter', 'linkedin', 'github', 'email', 'social'] },
+        { cmd: 'projects', keywords: ['marclanson', 'website', 'interface'] },
       ];
       const matches = searchable.filter(s => s.keywords.some(k => k.includes(term) || term.includes(k)));
       if (matches.length === 0) {
-        return `\n  <span class="muted">no results for "${term}"</span>\n  try: tools, projects, contact\n`;
+        return `\n  <span class="muted">no results for "${term}"</span>\n  try: tools, contact\n`;
       }
       let output = `\n  <span class="bold white">results for "${term}":</span>\n\n`;
       matches.forEach(m => {

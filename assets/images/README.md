@@ -25,7 +25,6 @@ You may also want to add:
 - Any additional background images
 - Profile photos
 - Logo variations
-- Icons for projects or investments
 
 ## File Formats
 
