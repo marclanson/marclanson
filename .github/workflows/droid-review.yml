@@ -2,7 +2,10 @@ name: Droid Auto Review
 
 on:
   pull_request:
-    types: [opened, ready_for_review, reopened]
+    # Adding 'synchronize' ensures Droid re-reviews every time you push new commits
+    types: [opened, ready_for_review, reopened, synchronize]
+  # This adds the "Run workflow" button for manual control
+  workflow_dispatch: 
 
 jobs:
   droid-review:
@@ -16,7 +19,7 @@ jobs:
       actions: read
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4 # Recommendation: Use v4 or v5
         with:
           fetch-depth: 1
 
