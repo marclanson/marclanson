@@ -574,13 +574,18 @@ a:hover {
     /* ===== UNIVERSAL ALIGNMENT ===== */
     /* Force left alignment on mobile */
     .terminal-title,
-    .terminal-status,
     .blog-header,
     .blog-footer,
     .post-footer,
     #output,
     .prose {
         text-align: left !important;
+    }
+
+    /* Terminal status bar aligned right on mobile */
+    .terminal-status {
+        text-align: right !important;
+        justify-content: flex-end;
     }
 
     /* ===== COMPONENT STACKING ===== */
